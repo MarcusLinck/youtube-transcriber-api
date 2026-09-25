@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "video_transcriptions_video_id_unique" ON "video_transcriptions" USING btree ("video_id") WHERE "video_transcriptions"."deleted_at" is null;

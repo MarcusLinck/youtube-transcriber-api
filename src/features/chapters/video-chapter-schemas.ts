@@ -1,0 +1,41 @@
+import { z } from 'zod'
+
+export const videoParamsSchema = z.object({
+  id: z.string().min(1, 'O id do vídeo é obrigatório.'),
+})
+
+export const videoChapterSchema = z.object({
+  id: z.string().describe('Identificador único (nanoid) dos capítulos.'),
+  video_id: z.string().describe('Identificador do vídeo ao qual os capítulos pertencem.'),
+  content: z.string().describe('Conteúdo dos capítulos do vídeo, um capítulo por linha no formato mm:ss - Título.'),
+  created_at: z.date().describe('Data e hora de criação do registro.'),
+  deleted_at: z.date().nullable().describe('Data e hora de exclusão lógica, se houver.'),
+  updated_at: z.date().describe('Data e hora da última atualização do registro.'),
+})
+
+export const createVideoChapterResponseSchema = z.object({
+  status: z.string(),
+  message: z.string(),
+  chapter: videoChapterSchema,
+})
+
+export const getVideoChapterResponseSchema = z.object({
+  status: z.string(),
+  message: z.string(),
+  chapter: videoChapterSchema,
+})
+
+export const successResponseSchema = z.object({
+  status: z.string(),
+  message: z.string(),
+})
+
+export const notFoundErrorSchema = z.object({
+  status: z.string(),
+  message: z.string(),
+})
+
+export const conflictErrorSchema = z.object({
+  status: z.string(),
+  message: z.string(),
+})
