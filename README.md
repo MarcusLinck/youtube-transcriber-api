@@ -1,4 +1,4 @@
-# 🚀 Fastfy — API de Transcrição e Capítulos para Vídeos do YouTube
+# 🚀 Youtube Transcriber Api — API de Transcrição e Capítulos para Vídeos do YouTube
 
 API construída com **Node.js + Fastify** para gerenciar vídeos do YouTube e gerar automaticamente, com **IA (Google Gemini)**, transcrições e capítulos a partir das legendas de cada vídeo — tudo processado de forma **assíncrona** através de filas **BullMQ**.
 
